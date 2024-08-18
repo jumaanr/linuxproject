@@ -12,3 +12,7 @@
       service:
         name: httpd
         state: started
+    - name: 'Copy an index.html'
+      copy:
+        src: files/index.html
+        dest: /var/www/html/index.html

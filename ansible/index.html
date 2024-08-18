@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostname and IP Address</title>
+</head>
+<body>
+    <h1 id="headline">Hostname and IP Address</h1>
+    <p>Welcome to Ansible</p>
+
+    <script>
+        // Function to display the hostname and IP address in the headline
+        function updateHeadline() {
+            let headline = document.getElementById("headline");
+
+            // For hostname
+            const hostname = window.location.hostname;
+
+            // Fetch IP Address using an external service (as a placeholder example)
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    const ip = data.ip;
+                    headline.textContent = `Hostname: ${hostname}, IP Address: ${ip}`;
+                })
+                .catch(error => {
+                    headline.textContent = `Hostname: ${hostname}, IP Address: Not Available`;
+                    console.error('Error fetching IP address:', error);
+                });
+        }
+
+        updateHeadline();
+    </script>
+</body>
+</html>
