@@ -1,0 +1,14 @@
+---
+- name: 'Install a Package'
+  hosts: prod
+  remote_user: devops
+  become: yes
+  tasks:
+    - name: 'Install Apache'
+      yum:
+        name: httpd
+        state: latest
+    - name: 'Start Apache'
+      service:
+        name: httpd
+        state: started

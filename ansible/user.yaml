@@ -1,0 +1,9 @@
+---
+- name: firstplay
+  hosts: dev #this should be applied only to the devgroup of inventory file
+  remote_user: devops
+  tasks:
+    - name: create tom
+      user: #we are using a module called user
+        name: tom
+        state: present
