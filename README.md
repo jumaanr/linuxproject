@@ -17,5 +17,6 @@ The configuration will be pushed from that container itself.
 
 Refer the image below:
 
-![Ansible Navigator Usage](resources\ansible-navigator.png)
+![Ansible Navigator](resources/ansible-navigator.png)
+
 
