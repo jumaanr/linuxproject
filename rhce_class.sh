@@ -16,3 +16,11 @@ ansible-doc -l # get the documentation
 ansible-doc user # check the documentation for user module
 ansible-playbook user.yaml # run the playbook called user.yaml
 ansible-playbook --syntax-check --dry-run
+
+## ---- Ansible Navigator ---##
+# If you work on a workstation and if you do any changes, that would affect you ansible 
+# I.E : Changing python version
+# Ansible Navigator is a container runtime that you could keep ansible workstation environment consistent
+# In the industry , usually there is a dedicated server for Ansible automation
+cat ~/.ansible-navigator.yml
+
