@@ -19,4 +19,9 @@ Refer the image below:
 
 ![Ansible Navigator](resources/ansible-navigator.png)
 
+-m stdout stands to ping the standard output to the shell itself.
+Instruct ansible to use the builtin mode. 
 
+Guided Excercise : Page no 42
+
+Guided Excercise : Page no 55
