@@ -1,3 +1,43 @@
+---
+# SSH Knowhow
+
+#ssh #windows #ubuntu #keypair #copy
+
+### Copying SSH Key Pair from Windows to Ubuntu Server
+
+#### Step-by-Step Commands:
+
+1. **Generate the SSH Key Pair:**
+   ```bash
+   ssh-keygen -t rsa -b 4096
+   ```
+   - This creates a 4096-bit RSA key pair.
+   - The public key will be saved as `id_rsa.pub` in the `~/.ssh` directory by default.
+
+2. **Copy the Public Key to the Ubuntu Server:**
+   ```bash
+   type $HOME\.ssh\id_rsa.pub | ssh username@serverA "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+   ```
+   - This command pipes the contents of the public key to the Ubuntu server.
+   - It appends the public key to the `authorized_keys` file in `~/.ssh`, allowing passwordless SSH.
+
+3. **Verify the Public Key:**
+   ```bash
+   type $HOME\.ssh\id_rsa.pub
+   ```
+   - Displays the contents of the `id_rsa.pub` file to confirm its creation.
+
+4. **Connect to the Ubuntu Server:**
+   ```bash
+   ssh username@serverA
+   ```
+   - You should now be able to log in without a password if the key was copied correctly.
+
+#### Notes:
+- Replace `username` with your actual username on the Ubuntu server.
+- Replace `serverA` with the server's IP address or hostname.
+
+---
 # sysctl in Linux
 
 **sysctl** is a powerful utility in Linux that allows you to view and modify kernel parameters at runtime. These parameters control various aspects of the kernel's operation, such as networking behavior, virtual memory management, and system security settings. By using `sysctl`, administrators can fine-tune the system's performance and behavior without the need to reboot.
